@@ -18,17 +18,17 @@ export default function Join() {
         </h2>
         <div className="join-steps">
           <div className="step-card fade-in-up">
-            <div className="step-number">01</div>
+            <div className="step-number">1</div>
             <h3>お問い合わせ</h3>
             <p>TwitterのDMまたはフォームからご連絡ください。</p>
           </div>
           <div className="step-card fade-in-up">
-            <div className="step-number">02</div>
+            <div className="step-number">2</div>
             <h3>簡単な確認</h3>
             <p>運営にて内容を確認し、ご案内をお送りします。</p>
           </div>
           <div className="step-card fade-in-up">
-            <div className="step-number">03</div>
+            <div className="step-number">3</div>
             <h3>Discord参加</h3>
             <p>招待リンクからDiscordサーバーに参加！</p>
           </div>
