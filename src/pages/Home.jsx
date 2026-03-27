@@ -7,19 +7,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content">
           <div className="hero-logo-row fade-in-up">
-            <svg className="hero-ginkgo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="ginkgo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor:'#eab308'}} />
-                  <stop offset="100%" style={{stopColor:'#ca8a04'}} />
-                </linearGradient>
-              </defs>
-              <path d="M50 95 C50 95 50 60 50 55 C35 55 15 45 12 25 C10 15 20 5 50 15 C50 15 50 5 50 5 C50 5 50 15 50 15 C80 5 90 15 88 25 C85 45 65 55 50 55 C50 60 50 95 50 95Z" fill="url(#ginkgo-grad)" opacity="0.9"/>
-            </svg>
-            <div className="hero-org-name">
-              Quants Finance<br />at UTokyo
-              <small>東京大学 金融キャリアコミュニティ</small>
-            </div>
+            <img src="/logo.png" alt="Quants at UTokyo" className="hero-logo-img" />
           </div>
 
           <div className="hero-since fade-in-up">Since 2026</div>
