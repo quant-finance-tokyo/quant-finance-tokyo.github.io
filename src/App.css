@@ -252,9 +252,11 @@ main {
 }
 
 .hero-logo-img {
-  width: clamp(160px, 25vw, 240px);
-  height: auto;
-  object-fit: contain;
+  width: clamp(140px, 22vw, 200px);
+  height: clamp(140px, 22vw, 200px);
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: center 40%;
 }
 
 .hero-badge {
