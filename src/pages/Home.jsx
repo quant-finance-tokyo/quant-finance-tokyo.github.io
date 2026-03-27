@@ -22,7 +22,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-badge fade-in-up">Since 2026</div>
+          <div className="hero-since fade-in-up">Since 2026</div>
 
           <h1 className="fade-in-up">
             学科を越えて、<br />

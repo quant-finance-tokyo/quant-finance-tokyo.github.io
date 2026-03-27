@@ -288,6 +288,15 @@ main {
   letter-spacing: 0.03em;
 }
 
+.hero-since {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gray-800);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 5.5vw, 4rem);
