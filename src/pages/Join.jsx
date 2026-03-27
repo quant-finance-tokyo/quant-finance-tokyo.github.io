@@ -37,7 +37,7 @@ export default function Join() {
 
         <div style={{ textAlign: 'center', margin: '3rem 0' }}>
           <a
-            href="https://x.com/VertexUTokyo"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfrNFYS8D1Cr1kksK2tymVpF_uzOjn7Kl5kqd1qhmZld_Q4gA/viewform?usp=dialog"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
