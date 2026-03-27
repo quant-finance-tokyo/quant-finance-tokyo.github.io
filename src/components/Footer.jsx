@@ -9,9 +9,11 @@ export default function Footer() {
         <Link to="/divisions">部門紹介</Link>
         <Link to="/events">Events</Link>
         <Link to="/join">入会する</Link>
-        <a href="https://x.com/VertexUTokyo" target="_blank" rel="noopener noreferrer">𝕏 Twitter</a>
+        <a href="https://x.com/VertexUTokyo" target="_blank" rel="noopener noreferrer">
+          𝕏 Twitter
+        </a>
       </div>
-      <p className="footer-copy">© 2026 Quants Finance at UTokyo. All rights reserved.</p>
+      <p className="footer-copy">&copy; 2026 Quants Finance at UTokyo. All rights reserved.</p>
     </footer>
   );
 }

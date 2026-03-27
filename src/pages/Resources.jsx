@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 export default function Resources() {
   return (
     <>
-      <section className="about-hero">
+      <section className="page-hero">
         <div className="section-header" style={{ position: 'relative', zIndex: 1 }}>
           <div className="section-tag">Resources</div>
           <h1 className="section-title">リソース</h1>
@@ -13,18 +15,18 @@ export default function Resources() {
 
       <section className="section">
         <div className="resource-grid">
-          <div className="resource-card">
+          <div className="resource-card fade-in">
             <h3>📖 おすすめ書籍</h3>
             <ul>
-              <li>確率論 — ウィリアムズ『Probability with Martingales』</li>
+              <li>確率論 — Williams『Probability with Martingales』</li>
               <li>金融工学 — Hull『Options, Futures, and Other Derivatives』</li>
               <li>統計的学習 — Bishop『Pattern Recognition and Machine Learning』</li>
-              <li>クオンツ面接 — 『Heard on the Street』</li>
-              <li>確率パズル — 『Fifty Challenging Problems in Probability』</li>
+              <li>クオンツ面接 —『Heard on the Street』</li>
+              <li>確率パズル —『Fifty Challenging Problems in Probability』</li>
             </ul>
           </div>
 
-          <div className="resource-card">
+          <div className="resource-card fade-in">
             <h3>💻 プログラミング</h3>
             <ul>
               <li>Python — NumPy, pandas, scikit-learn</li>
@@ -45,7 +47,7 @@ export default function Resources() {
             </ul>
           </div>
 
-          <div className="resource-card">
+          <div className="resource-card fade-in">
             <h3>🏆 コンペティション</h3>
             <ul>
               <li>
@@ -72,22 +74,8 @@ export default function Resources() {
             </ul>
           </div>
 
-          <div className="resource-card">
-            <h3>🎓 オンライン学習</h3>
-            <ul>
-              <li>MIT OCW — Mathematics for Computer Science</li>
-              <li>Coursera — Financial Engineering and Risk Management</li>
-              <li>
-                <a href="https://weblab.t.u-tokyo.ac.jp/lecture/course-list/financial-machin-learning/" target="_blank" rel="noopener noreferrer">
-                  東大松尾研 金融ML講座
-                </a>
-              </li>
-              <li>Khan Academy — Statistics & Probability</li>
-            </ul>
-          </div>
-
-          <div className="resource-card">
-            <h3>🏢 主な就職先企業</h3>
+          <div className="resource-card fade-in">
+            <h3>🎯 目指す就職先（参考）</h3>
             <ul>
               <li><strong>外資プロップ：</strong>Jane Street, Optiver, IMC, Five Rings</li>
               <li><strong>ヘッジファンド：</strong>Citadel, Two Sigma, DE Shaw</li>
@@ -97,7 +85,18 @@ export default function Resources() {
             </ul>
           </div>
 
-          <div className="resource-card">
+          <div className="resource-card fade-in">
+            <h3>🏫 関連する東大の授業（参考）</h3>
+            <ul>
+              <li>確率統計 / 数理統計学</li>
+              <li>金融工学関連科目</li>
+              <li>最適化手法</li>
+              <li>機械学習 / データサイエンス</li>
+              <li>計量経済学</li>
+            </ul>
+          </div>
+
+          <div className="resource-card fade-in">
             <h3>🔗 SNS・コミュニティ</h3>
             <ul>
               <li>
@@ -107,15 +106,21 @@ export default function Resources() {
                 {' '}— 公式Twitter
               </li>
               <li>Discord — メンバー限定（入会後にアクセス可能）</li>
-              <li>LINEグループ — 応物（計数物工）金融系</li>
             </ul>
           </div>
         </div>
 
-        <div className="highlight-box" style={{ marginTop: '3rem' }}>
+        <div className="highlight-box fade-in" style={{ marginTop: '3rem' }}>
           <p>
-            💡 より詳細なリソース・就活タイムラインはDiscordサーバー内で共有しています。
-            <a href="#/join" style={{ color: 'var(--cyan-400)', marginLeft: '0.5rem' }}>入会はこちら →</a>
+            より詳細なリソース・就活タイムラインはDiscordサーバー内で共有しています。
+            <Link to="/join" style={{ color: 'var(--blue-600)', marginLeft: '0.5rem' }}>入会はこちら &rarr;</Link>
+          </p>
+        </div>
+
+        <div className="highlight-box-yellow fade-in" style={{ marginTop: '1rem' }}>
+          <p>
+            ※ 「目指す就職先」は、メンバーが関心を持つ企業の例です。
+            コミュニティとしての実績や内定実績を示すものではありません。
           </p>
         </div>
       </section>

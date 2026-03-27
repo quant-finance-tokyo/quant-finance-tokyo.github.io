@@ -15,12 +15,12 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-logo">
+      <Link to="/" className="navbar-logo" onClick={() => setOpen(false)}>
         <div className="logo-mark">Q</div>
         <span>Quants Finance at UTokyo</span>
       </Link>
 
-      <button className="mobile-toggle" onClick={() => setOpen(!open)}>
+      <button className="mobile-toggle" onClick={() => setOpen(!open)} aria-label="メニュー">
         {open ? '✕' : '☰'}
       </button>
 
