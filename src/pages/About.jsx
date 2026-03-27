@@ -58,9 +58,9 @@ export default function About() {
           代表
         </h2>
         <p>
-          <strong>土岐 弦太郎</strong><br />
+          <strong>Gentaro TOKI</strong><br />
           東京大学 工学部 計数工学科 B3<br />
-          金融工学・機械学習・量子情報を専攻予定。語学が趣味で現在第5外国語を学習中。。。
+          金融工学・機械学習・量子情報を専攻予定。語学が趣味で現在第5外国語学習中。
         </p>
       </div>
 
