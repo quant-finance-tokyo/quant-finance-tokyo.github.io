@@ -3,7 +3,6 @@ export default function Join() {
     <>
       <section className="page-hero">
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <div className="section-tag">Join Us</div>
           <h1 className="section-title" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             入会案内
           </h1>

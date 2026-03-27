@@ -3,7 +3,6 @@ export default function Events() {
     <>
       <section className="page-hero">
         <div className="section-header" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="section-tag">Events</div>
           <h1 className="section-title">イベント・今後の予定</h1>
           <p className="section-desc">
             勉強会や交流会を中心に、少しずつ活動を広げていきます

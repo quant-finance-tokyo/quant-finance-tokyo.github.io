@@ -3,7 +3,6 @@ export default function Divisions() {
     <>
       <section className="page-hero">
         <div className="section-header" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="section-tag">Divisions</div>
           <h1 className="section-title">部門紹介</h1>
           <p className="section-desc">
             今後、以下の3つの部門を軸に活動を展開していく予定です

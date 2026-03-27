@@ -57,7 +57,6 @@ export default function Home() {
       {/* What We Do */}
       <section className="section">
         <div className="section-header fade-in">
-          <div className="section-tag">What We Do</div>
           <h2 className="section-title">活動内容</h2>
           <p className="section-desc">
             設立したばかりのコミュニティですが、以下の活動を進めています

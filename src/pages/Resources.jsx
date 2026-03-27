@@ -5,7 +5,6 @@ export default function Resources() {
     <>
       <section className="page-hero">
         <div className="section-header" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="section-tag">Resources</div>
           <h1 className="section-title">リソース</h1>
           <p className="section-desc">
             金融キャリアを目指すためのおすすめ教材・情報
