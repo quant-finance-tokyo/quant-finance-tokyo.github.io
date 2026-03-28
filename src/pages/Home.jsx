@@ -6,6 +6,11 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="hero-content">
+          <div className="hero-logo-text fade-in-up">
+            <span className="hero-logo-main">Quants Finance</span>
+            <span className="hero-logo-sub">at UTokyo</span>
+          </div>
+
           <div className="hero-since fade-in-up">Since 2026</div>
 
           <h1 className="fade-in-up">

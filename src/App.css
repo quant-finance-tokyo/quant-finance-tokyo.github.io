@@ -259,13 +259,42 @@ main {
   letter-spacing: 0.03em;
 }
 
-.hero-since {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--gray-800);
-  letter-spacing: 0.08em;
+/* ===== Hero Logo Text ===== */
+.hero-logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1.5rem;
+}
+
+.hero-logo-main {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--blue-800) 0%, var(--blue-600) 50%, var(--yellow-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-logo-sub {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+}
+
+.hero-since {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gray-400);
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
 }
 
 .hero h1 {
