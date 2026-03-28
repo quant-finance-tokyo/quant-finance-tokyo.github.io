@@ -6,10 +6,6 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="hero-content">
-          <div className="hero-logo-row fade-in-up">
-            <img src="/logo.svg" alt="Quants at UTokyo" className="hero-logo-img" />
-          </div>
-
           <div className="hero-since fade-in-up">Since 2026</div>
 
           <h1 className="fade-in-up">

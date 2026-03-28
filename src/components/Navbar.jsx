@@ -16,7 +16,6 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-logo" onClick={() => setOpen(false)}>
-        <img src="/logo.svg" alt="Logo" className="logo-mark-img" />
         <span>Quants Finance at UTokyo</span>
       </Link>
 
