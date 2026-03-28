@@ -1,22 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const links = [
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About' },
-    { to: '/divisions', label: '部門紹介' },
+    { to: '/divisions', label: 'Divisions' },
     { to: '/events', label: 'Events' },
     { to: '/resources', label: 'Resources' },
   ];
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <Link to="/" className="navbar-logo" onClick={() => setOpen(false)}>
-        <span>Quants Finance at UTokyo</span>
+        <span>Quants Finance</span>
       </Link>
 
       <button className="mobile-toggle" onClick={() => setOpen(!open)} aria-label="メニュー">
@@ -37,7 +44,7 @@ export default function Navbar() {
         ))}
         <li>
           <Link to="/join" className="navbar-cta" onClick={() => setOpen(false)}>
-            入会する
+            Join
           </Link>
         </li>
       </ul>
