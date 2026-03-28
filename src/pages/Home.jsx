@@ -7,7 +7,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content">
           <div className="hero-logo-row fade-in-up">
-            <img src="/logo.png" alt="Quants at UTokyo" className="hero-logo-img" />
+            <img src="/logo.svg" alt="Quants at UTokyo" className="hero-logo-img" />
           </div>
 
           <div className="hero-since fade-in-up">Since 2026</div>

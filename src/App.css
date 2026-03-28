@@ -124,11 +124,9 @@ main {
 }
 
 .navbar-logo .logo-mark-img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 40%;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 .navbar-logo span {
@@ -246,11 +244,8 @@ main {
 }
 
 .hero-logo-img {
-  width: clamp(140px, 22vw, 200px);
-  height: clamp(140px, 22vw, 200px);
-  object-fit: cover;
-  border-radius: 50%;
-  object-position: center 40%;
+  width: clamp(160px, 25vw, 240px);
+  height: auto;
 }
 
 .hero-badge {
