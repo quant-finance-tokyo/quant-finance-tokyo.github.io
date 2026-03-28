@@ -1,75 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80">
   <defs>
-    <linearGradient id="blueGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2563eb"/>
-      <stop offset="50%" style="stop-color:#3b82f6"/>
-      <stop offset="100%" style="stop-color:#eab308"/>
-    </linearGradient>
-    <linearGradient id="goldBlue" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#eab308"/>
-      <stop offset="50%" style="stop-color:#facc15"/>
-      <stop offset="100%" style="stop-color:#2563eb"/>
-    </linearGradient>
-    <linearGradient id="nodeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#2563eb"/>
       <stop offset="100%" style="stop-color:#eab308"/>
     </linearGradient>
   </defs>
-
-  <!-- Abstract network/graph: nodes connected by lines -->
-  <!-- Represents interconnected departments, data flow, quantitative networks -->
-
-  <!-- Connection lines (drawn first, behind nodes) -->
-  <line x1="120" y1="160" x2="200" y2="80" stroke="url(#blueGold)" stroke-width="2.5" opacity="0.6"/>
-  <line x1="200" y1="80" x2="280" y2="140" stroke="url(#blueGold)" stroke-width="2.5" opacity="0.6"/>
-  <line x1="280" y1="140" x2="300" y2="240" stroke="url(#blueGold)" stroke-width="2.5" opacity="0.6"/>
-  <line x1="120" y1="160" x2="100" y2="260" stroke="url(#goldBlue)" stroke-width="2.5" opacity="0.6"/>
-  <line x1="100" y1="260" x2="200" y2="300" stroke="url(#goldBlue)" stroke-width="2.5" opacity="0.6"/>
-  <line x1="200" y1="300" x2="300" y2="240" stroke="url(#blueGold)" stroke-width="2.5" opacity="0.6"/>
-  <!-- Cross connections -->
-  <line x1="120" y1="160" x2="280" y2="140" stroke="url(#blueGold)" stroke-width="1.5" opacity="0.25"/>
-  <line x1="120" y1="160" x2="200" y2="300" stroke="url(#goldBlue)" stroke-width="1.5" opacity="0.25"/>
-  <line x1="200" y1="80" x2="300" y2="240" stroke="url(#blueGold)" stroke-width="1.5" opacity="0.25"/>
-  <line x1="200" y1="80" x2="100" y2="260" stroke="url(#goldBlue)" stroke-width="1.5" opacity="0.25"/>
-  <line x1="280" y1="140" x2="100" y2="260" stroke="url(#blueGold)" stroke-width="1.5" opacity="0.25"/>
-
-  <!-- Rising chart line overlaid -->
-  <polyline
-    points="80,280 140,240 180,260 220,200 260,180 320,120"
-    fill="none"
-    stroke="url(#blueGold)"
-    stroke-width="3.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    opacity="0.8"
-  />
-
-  <!-- Nodes -->
-  <circle cx="200" cy="80" r="14" fill="#2563eb"/>
-  <circle cx="200" cy="80" r="7" fill="white" opacity="0.9"/>
-
-  <circle cx="120" cy="160" r="12" fill="#3b82f6"/>
-  <circle cx="120" cy="160" r="6" fill="white" opacity="0.9"/>
-
-  <circle cx="280" cy="140" r="12" fill="#3b82f6"/>
-  <circle cx="280" cy="140" r="6" fill="white" opacity="0.9"/>
-
-  <circle cx="100" cy="260" r="11" fill="#eab308"/>
-  <circle cx="100" cy="260" r="5.5" fill="white" opacity="0.9"/>
-
-  <circle cx="200" cy="300" r="11" fill="#d97706"/>
-  <circle cx="200" cy="300" r="5.5" fill="white" opacity="0.9"/>
-
-  <circle cx="300" cy="240" r="12" fill="#eab308"/>
-  <circle cx="300" cy="240" r="6" fill="white" opacity="0.9"/>
-
-  <!-- Chart line end nodes -->
-  <circle cx="80" cy="280" r="5" fill="#2563eb" opacity="0.6"/>
-  <circle cx="320" cy="120" r="6" fill="#eab308"/>
-  <circle cx="320" cy="120" r="3" fill="white" opacity="0.9"/>
-
-  <!-- Text -->
-  <text x="200" y="362" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="28" font-weight="700" fill="#0f172a" letter-spacing="-0.5">
-    Quants at UTokyo
+  <text x="0" y="38" font-family="'DM Sans', 'Helvetica Neue', sans-serif" font-size="36" font-weight="700" fill="#0f172a" letter-spacing="-1.5">
+    Quants Finance
   </text>
+  <text x="0" y="68" font-family="'DM Sans', 'Helvetica Neue', sans-serif" font-size="22" font-weight="400" fill="#64748b" letter-spacing="0.5">
+    at UTokyo
+  </text>
+  <rect x="0" y="75" width="80" height="3" rx="1.5" fill="url(#accent)"/>
 </svg>
