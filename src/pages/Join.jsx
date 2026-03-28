@@ -16,21 +16,26 @@ export default function Join() {
         <h2 className="fade-in" style={{ fontSize: '1.3rem', marginBottom: '2rem', fontFamily: 'var(--font-display)' }}>
           入会の流れ
         </h2>
-        <div className="join-steps">
+        <div className="join-steps four-steps">
           <div className="step-card fade-in-up">
             <div className="step-number">1</div>
-            <h3>お問い合わせ</h3>
-            <p>TwitterのDMまたはフォームからご連絡ください。</p>
+            <h3>DMで連絡</h3>
+            <p>𝕏（Twitter）の @VertexUTokyo にDMを送ってください。</p>
           </div>
           <div className="step-card fade-in-up">
             <div className="step-number">2</div>
-            <h3>簡単な確認</h3>
-            <p>運営にて内容を確認し、ご案内をお送りします。</p>
+            <h3>入会フォーム記入</h3>
+            <p>DMにて入会フォームのリンクをお送りします。必要事項をご記入ください。</p>
           </div>
           <div className="step-card fade-in-up">
             <div className="step-number">3</div>
-            <h3>Discord参加</h3>
-            <p>招待リンクからDiscordサーバーに参加！</p>
+            <h3>審査</h3>
+            <p>フォームの内容をもとに、運営にて簡単な審査を行います。</p>
+          </div>
+          <div className="step-card fade-in-up">
+            <div className="step-number">4</div>
+            <h3>入会・Discord参加</h3>
+            <p>承認後、招待リンクをお送りします。Discordサーバーに参加して活動開始！</p>
           </div>
         </div>
 

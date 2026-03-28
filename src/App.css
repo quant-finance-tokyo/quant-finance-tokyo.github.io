@@ -733,6 +733,10 @@ main {
   margin-top: 2.5rem;
 }
 
+.join-steps.four-steps {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .step-card {
   text-align: center;
   padding: 2rem;
