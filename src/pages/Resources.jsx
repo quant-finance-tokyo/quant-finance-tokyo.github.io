@@ -15,7 +15,7 @@ export default function Resources() {
       <section className="section">
         <div className="resource-grid">
           <div className="resource-card fade-in">
-            <h3>📖 おすすめ書籍</h3>
+            <h3>おすすめ書籍</h3>
             <ul>
               <li>確率論 — Williams『Probability with Martingales』</li>
               <li>金融工学 — Hull『Options, Futures, and Other Derivatives』</li>
@@ -26,7 +26,7 @@ export default function Resources() {
           </div>
 
           <div className="resource-card fade-in">
-            <h3>💻 プログラミング</h3>
+            <h3>プログラミング</h3>
             <ul>
               <li>Python — NumPy, pandas, scikit-learn</li>
               <li>C++ — 競プロ（AtCoder）でアルゴリズム力強化</li>
@@ -47,7 +47,7 @@ export default function Resources() {
           </div>
 
           <div className="resource-card fade-in">
-            <h3>🏆 コンペティション</h3>
+            <h3>コンペティション</h3>
             <ul>
               <li>
                 <a href="https://www.worldquant.com/brain/iqc/" target="_blank" rel="noopener noreferrer">
@@ -74,7 +74,7 @@ export default function Resources() {
           </div>
 
           <div className="resource-card fade-in">
-            <h3>🎯 目指す就職先（参考）</h3>
+            <h3>目指す就職先（参考）</h3>
             <ul>
               <li><strong>外資プロップ：</strong>Jane Street, Optiver, IMC, Five Rings</li>
               <li><strong>ヘッジファンド：</strong>Citadel, Two Sigma, DE Shaw</li>
@@ -85,7 +85,7 @@ export default function Resources() {
           </div>
 
           <div className="resource-card fade-in">
-            <h3>🏫 関連する東大の授業（参考）</h3>
+            <h3>関連する東大の授業（参考）</h3>
             <ul>
               <li>確率統計 / 数理統計学</li>
               <li>金融工学関連科目</li>
@@ -96,7 +96,7 @@ export default function Resources() {
           </div>
 
           <div className="resource-card fade-in">
-            <h3>🔗 SNS・コミュニティ</h3>
+            <h3>SNS・コミュニティ</h3>
             <ul>
               <li>
                 <a href="https://x.com/VertexUTokyo" target="_blank" rel="noopener noreferrer">

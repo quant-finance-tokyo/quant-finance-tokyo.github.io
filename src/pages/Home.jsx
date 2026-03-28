@@ -66,7 +66,7 @@ export default function Home() {
 
         <div className="card-grid">
           <div className="card fade-in">
-            <div className="card-icon">📊</div>
+
             <h3>就活・インターン情報共有</h3>
             <p>
               クオンツ・アクチュアリー・金融職の選考情報、
@@ -77,7 +77,7 @@ export default function Home() {
           </div>
 
           <div className="card fade-in">
-            <div className="card-icon">📚</div>
+
             <h3>授業・勉強会情報の共有</h3>
             <p>
               金融キャリアに関連する東大の授業情報や、
@@ -87,7 +87,7 @@ export default function Home() {
           </div>
 
           <div className="card fade-in">
-            <div className="card-icon">🏆</div>
+
             <h3>コンペティション情報共有</h3>
             <p>
               WorldQuant IQCやIMC Prosperityなどの

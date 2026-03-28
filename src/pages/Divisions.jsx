@@ -20,7 +20,7 @@ export default function Divisions() {
 
         <div className="division-card fade-in">
           <div className="future-note">今後整備予定</div>
-          <h3>📈 クオンツ部門</h3>
+          <h3>クオンツ部門</h3>
           <p>
             デリバティブプライシング、アルゴリズムトレーディング、リスク管理、クオンツリサーチなど、
             数理的手法を金融に応用する分野に興味のあるメンバー向け。
@@ -38,7 +38,7 @@ export default function Divisions() {
 
         <div className="division-card fade-in">
           <div className="future-note">今後整備予定</div>
-          <h3>🔢 アクチュアリー部門</h3>
+          <h3>アクチュアリー部門</h3>
           <p>
             保険数理、年金数理、リスク評価など、
             アクチュアリー資格の取得を目指す方や、
@@ -55,7 +55,7 @@ export default function Divisions() {
 
         <div className="division-card fade-in">
           <div className="future-note">今後整備予定</div>
-          <h3>💼 その他金融職部門</h3>
+          <h3>その他金融職部門</h3>
           <p>
             IBD、セールス＆トレーディング、アセットマネジメント、
             フィンテックなど、クオンツ・アクチュアリー以外の
