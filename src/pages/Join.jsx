@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwglaxhUHej97v6XSeEZ7EOTLji2oXeQWx4eMWlC_lKJcmCT0vNe5zxUb1Z57myMird0g/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby0npx1EH-f-VzBbCqXbDlgjQAxg7COud2W7KuLYnFMysmMCwjYuohF6Hy5N0gQ0I2l/exec';
 
 export default function Join() {
   const [form, setForm] = useState({
