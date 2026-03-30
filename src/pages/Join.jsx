@@ -6,9 +6,12 @@ export default function Join() {
   const [form, setForm] = useState({
     name: '',
     email: '',
+    university: '',
     department: '',
     year: '',
     interest: [],
+    skills: '',
+    contribution: '',
     motivation: '',
   });
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
@@ -38,7 +41,7 @@ export default function Join() {
         }),
       });
       setStatus('success');
-      setForm({ name: '', email: '', department: '', year: '', interest: [], motivation: '' });
+      setForm({ name: '', email: '', university: '', department: '', year: '', interest: [], skills: '', contribution: '', motivation: '' });
     } catch {
       setStatus('error');
     }
@@ -126,6 +129,18 @@ export default function Join() {
                 />
               </div>
 
+              <div className="form-group">
+                <label htmlFor="university">大学名 <span className="required">*</span></label>
+                <input
+                  id="university"
+                  type="text"
+                  required
+                  placeholder="東京大学"
+                  value={form.university}
+                  onChange={e => setForm({...form, university: e.target.value})}
+                />
+              </div>
+
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="department">学科・専攻 <span className="required">*</span></label>
@@ -173,6 +188,30 @@ export default function Join() {
                     </button>
                   ))}
                 </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="skills">現在の知識・技術状況 <span className="required">*</span></label>
+                <textarea
+                  id="skills"
+                  rows="3"
+                  required
+                  placeholder="例：Python歴2年、確率統計の基礎は履修済み、AtCoder緑 など"
+                  value={form.skills}
+                  onChange={e => setForm({...form, skills: e.target.value})}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="contribution">コミュニティにどう貢献できるか <span className="required">*</span></label>
+                <textarea
+                  id="contribution"
+                  rows="3"
+                  required
+                  placeholder="例：クオンツ就活の情報共有、勉強会の企画、コンペのチーム参加 など"
+                  value={form.contribution}
+                  onChange={e => setForm({...form, contribution: e.target.value})}
+                />
               </div>
 
               <div className="form-group">
