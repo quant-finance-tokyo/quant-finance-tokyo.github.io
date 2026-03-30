@@ -727,11 +727,10 @@ main {
 
 /* ===== Join Page ===== */
 .join-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   margin-top: 2.5rem;
-  max-width: 500px;
 }
 
 .step-card {
