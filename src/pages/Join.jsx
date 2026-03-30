@@ -101,6 +101,7 @@ export default function Join() {
                 <label htmlFor="email">{j.email} <span className="required">*</span></label>
                 <input id="email" type="email" required placeholder="example@g.ecc.u-tokyo.ac.jp"
                   value={form.email} onChange={e => setForm({...form, email: e.target.value})} />
+                <span style={{ fontSize: '0.8rem', color: 'var(--gray-400)', marginTop: '0.2rem' }}>{j.emailNote}</span>
               </div>
 
               <div className="form-group">
