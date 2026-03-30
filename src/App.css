@@ -1062,6 +1062,31 @@ main {
 
   .join-steps {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .step-card {
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .step-card .step-number {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .step-card h3 {
+    margin: 0 0 0.2rem;
+    font-size: 0.95rem;
+  }
+
+  .step-card p {
+    font-size: 0.82rem;
+    margin: 0;
   }
 
   .form-row {
