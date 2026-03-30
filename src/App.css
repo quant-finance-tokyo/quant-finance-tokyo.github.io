@@ -733,8 +733,8 @@ main {
   margin-top: 2.5rem;
 }
 
-.join-steps.four-steps {
-  grid-template-columns: repeat(4, 1fr);
+.join-steps.three-steps {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .step-card {
@@ -767,6 +767,122 @@ main {
 .step-card p {
   color: var(--gray-500);
   font-size: 0.88rem;
+}
+
+/* ===== Join Form ===== */
+.form-section {
+  max-width: 640px;
+  margin: 3.5rem auto 0;
+  padding: 2.5rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.form-group .required {
+  color: #dc2626;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--gray-800);
+  background: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray-400);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.interest-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.interest-chip {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 100px;
+  background: var(--white);
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.interest-chip:hover {
+  border-color: var(--blue-400);
+  color: var(--blue-600);
+}
+
+.interest-chip.selected {
+  background: var(--blue-600);
+  color: var(--white);
+  border-color: var(--blue-600);
+}
+
+.form-success {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.form-success h3 {
+  font-size: 1.3rem;
+  color: var(--blue-600);
+  margin-bottom: 0.75rem;
+}
+
+.form-success p {
+  color: var(--gray-500);
+  font-size: 0.95rem;
 }
 
 /* ===== FAQ ===== */
@@ -946,6 +1062,15 @@ main {
 
   .join-steps {
     grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+    margin-top: 2.5rem;
   }
 
   .hero h1 {
