@@ -13,7 +13,7 @@ export default function Footer() {
           𝕏 Twitter
         </a>
       </div>
-      <p className="footer-copy">&copy; 2026 Quants Finance at UTokyo. All rights reserved.</p>
+      <p className="footer-copy">&copy; 2026 Quant Finance at UTokyo. All rights reserved.</p>
     </footer>
   );
 }

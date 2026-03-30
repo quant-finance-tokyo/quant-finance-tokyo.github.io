@@ -4,7 +4,7 @@ export default function About() {
       <section className="page-hero">
         <div className="section-header" style={{ position: 'relative', zIndex: 1 }}>
           <h1 className="section-title" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
-            Quants Finance at UTokyoとは
+            Quant Finance at UTokyoとは
           </h1>
           <p className="section-desc">
             東大の学科を越えた、金融系キャリアコミュニティ
@@ -26,7 +26,7 @@ export default function About() {
 
         <div className="highlight-box fade-in">
           <p>
-            Quants Finance at UTokyoは、この<strong>情報の非対称性を解消</strong>し、
+            Quant Finance at UTokyoは、この<strong>情報の非対称性を解消</strong>し、
             学科の壁を越えて金融キャリアに関する情報を共有するために
             2026年3月に設立されたコミュニティです。
           </p>

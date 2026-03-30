@@ -7,7 +7,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content">
           <div className="hero-logo-text fade-in-up">
-            <span className="hero-logo-main">Quants Finance</span>
+            <span className="hero-logo-main">Quant Finance</span>
             <span className="hero-logo-sub">at UTokyo</span>
           </div>
 
@@ -19,7 +19,7 @@ export default function Home() {
           </h1>
 
           <p className="fade-in-up">
-            Quants Finance at UTokyoは、クオンツ・アクチュアリー・金融職を目指す
+            Quant Finance at UTokyoは、クオンツ・アクチュアリー・金融職を目指す
             東大生のための情報共有コミュニティです。
             就活・インターン情報、授業の情報、コンペティション情報を
             学科の壁を越えて共有し、一人ひとりのキャリアを加速させます。

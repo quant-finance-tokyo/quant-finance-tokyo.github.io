@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <Link to="/" className="navbar-logo" onClick={() => setOpen(false)}>
-        <span>Quants Finance</span>
+        <span>Quant Finance</span>
       </Link>
 
       <button className="mobile-toggle" onClick={() => setOpen(!open)} aria-label="メニュー">
