@@ -31,7 +31,7 @@ export default function Resources() {
             <h3>{r.programming}</h3>
             <ul>
               <li>Python — NumPy, pandas, scikit-learn</li>
-              <li>C++ — AtCoder</li>
+              <li>C++ — <a href="https://atcoder.jp" target="_blank" rel="noopener noreferrer">AtCoder</a></li>
               <li>SQL</li>
               <li><a href="https://quantconnect.com" target="_blank" rel="noopener noreferrer">QuantConnect</a></li>
               <li><a href="https://worldquantbrain.com" target="_blank" rel="noopener noreferrer">WorldQuant BRAIN</a></li>
