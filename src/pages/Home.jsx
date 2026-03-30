@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useLang } from '../i18n/LanguageContext';
 
 export default function Home() {
+  const { t } = useLang();
+  const h = t.home;
+
   return (
     <>
       {/* Hero */}
@@ -11,30 +15,18 @@ export default function Home() {
             <span className="hero-logo-sub">at UTokyo</span>
           </div>
 
-          <div className="hero-since fade-in-up">Since 2026</div>
+          <div className="hero-since fade-in-up">{h.since}</div>
 
           <h1 className="fade-in-up">
-            学科を越えて、<br />
-            <span className="gradient-text">金融キャリアを拓く。</span>
+            {h.heading1}<br />
+            <span className="gradient-text">{h.heading2}</span>
           </h1>
 
-          <p className="fade-in-up">
-            Quant Finance at UTokyoは、クオンツ・アクチュアリー・金融職を目指す
-            東大生のための情報共有コミュニティです。
-            就活・インターン情報、授業の情報、コンペティション情報を
-            学科の壁を越えて共有し、一人ひとりのキャリアを加速させます。
-          </p>
+          <p className="fade-in-up">{h.desc}</p>
 
           <div className="hero-buttons fade-in-up">
-            <a
-              href="https://x.com/VertexUTokyo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              入会について &rarr;
-            </a>
-            <Link to="/about" className="btn-secondary">詳しく見る</Link>
+            <Link to="/join" className="btn-primary">{h.joinBtn} &rarr;</Link>
+            <Link to="/about" className="btn-secondary">{h.learnMore}</Link>
           </div>
         </div>
       </section>
@@ -43,57 +35,41 @@ export default function Home() {
       <div className="stats-bar">
         <div className="stat-item fade-in-up">
           <div className="stat-number">3</div>
-          <div className="stat-label">部門（予定）</div>
+          <div className="stat-label">{h.statDivisions}</div>
         </div>
         <div className="stat-item fade-in-up">
           <div className="stat-number">6+</div>
-          <div className="stat-label">対象学科</div>
+          <div className="stat-label">{h.statDepts}</div>
         </div>
         <div className="stat-item fade-in-up">
           <div className="stat-number">2026</div>
-          <div className="stat-label">設立</div>
+          <div className="stat-label">{h.statFounded}</div>
         </div>
       </div>
 
       {/* What We Do */}
       <section className="section">
         <div className="section-header fade-in">
-          <h2 className="section-title">活動内容</h2>
-          <p className="section-desc">
-            設立したばかりのコミュニティですが、以下の活動を進めています
-          </p>
+          <h2 className="section-title">{h.activityTitle}</h2>
+          <p className="section-desc">{h.activityDesc}</p>
         </div>
 
         <div className="card-grid">
           <div className="card fade-in">
-
-            <h3>就活・インターン情報共有</h3>
-            <p>
-              クオンツ・アクチュアリー・金融職の選考情報、
-              募集タイムライン、説明会の感想などを
-              学科を越えて共有します。
-            </p>
+            <h3>{h.card1Title}</h3>
+            <p>{h.card1Desc}</p>
             <div className="card-tag">CORE</div>
           </div>
 
           <div className="card fade-in">
-
-            <h3>授業・勉強会情報の共有</h3>
-            <p>
-              金融キャリアに関連する東大の授業情報や、
-              勉強会・輪読会を企画・開催していきます。
-            </p>
+            <h3>{h.card2Title}</h3>
+            <p>{h.card2Desc}</p>
             <div className="card-tag">STUDY</div>
           </div>
 
           <div className="card fade-in">
-
-            <h3>コンペティション情報共有</h3>
-            <p>
-              WorldQuant IQCやIMC Prosperityなどの
-              国際コンペティションの情報を共有。
-              今後チームでの参加も目指します。
-            </p>
+            <h3>{h.card3Title}</h3>
+            <p>{h.card3Desc}</p>
             <div className="card-tag">COMPETITION</div>
           </div>
         </div>
@@ -101,11 +77,9 @@ export default function Home() {
 
       {/* CTA */}
       <section className="cta-section fade-in-up">
-        <h2>一緒にコミュニティを育てよう。</h2>
-        <p>
-          設立メンバーとして、学科・学年を問わず金融キャリアに興味のある東大生を募集しています。
-        </p>
-        <Link to="/join" className="btn-primary">入会について &rarr;</Link>
+        <h2>{h.ctaTitle}</h2>
+        <p>{h.ctaDesc}</p>
+        <Link to="/join" className="btn-primary">{h.ctaBtn} &rarr;</Link>
       </section>
     </>
   );

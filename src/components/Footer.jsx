@@ -1,19 +1,22 @@
 import { Link } from 'react-router-dom';
+import { useLang } from '../i18n/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLang();
+
   return (
     <footer className="footer">
       <div className="footer-links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/divisions">部門紹介</Link>
-        <Link to="/events">Events</Link>
-        <Link to="/join">入会する</Link>
+        <Link to="/">{t.nav.home}</Link>
+        <Link to="/about">{t.nav.about}</Link>
+        <Link to="/divisions">{t.nav.divisions}</Link>
+        <Link to="/events">{t.nav.events}</Link>
+        <Link to="/join">{t.nav.join}</Link>
         <a href="https://x.com/VertexUTokyo" target="_blank" rel="noopener noreferrer">
           𝕏 Twitter
         </a>
       </div>
-      <p className="footer-copy">&copy; 2026 Quant Finance at UTokyo. All rights reserved.</p>
+      <p className="footer-copy">{t.footer.copyright}</p>
     </footer>
   );
 }

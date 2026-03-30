@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useLang } from '../i18n/LanguageContext';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { lang, t, toggleLang } = useLang();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -13,11 +15,11 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/divisions', label: 'Divisions' },
-    { to: '/events', label: 'Events' },
-    { to: '/resources', label: 'Resources' },
+    { to: '/', label: t.nav.home },
+    { to: '/about', label: t.nav.about },
+    { to: '/divisions', label: t.nav.divisions },
+    { to: '/events', label: t.nav.events },
+    { to: '/resources', label: t.nav.resources },
   ];
 
   return (
@@ -44,8 +46,13 @@ export default function Navbar() {
         ))}
         <li>
           <Link to="/join" className="navbar-cta" onClick={() => setOpen(false)}>
-            Join
+            {t.nav.join}
           </Link>
+        </li>
+        <li>
+          <button className="lang-toggle" onClick={toggleLang}>
+            {lang === 'ja' ? 'EN' : 'JP'}
+          </button>
         </li>
       </ul>
     </nav>
