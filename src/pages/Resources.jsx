@@ -45,7 +45,7 @@ export default function Resources() {
               <li><a href="https://prosperity.imc.com" target="_blank" rel="noopener noreferrer">IMC Prosperity</a></li>
               <li><a href="https://www.citadel.com/careers/programs-and-events/terminal/" target="_blank" rel="noopener noreferrer">Citadel Terminal</a></li>
               <li><a href="https://www.citadel.com/careers/programs-and-events/datathons/" target="_blank" rel="noopener noreferrer">Citadel Datathon</a></li>
-              <li>AtCoder</li>
+              <li><a href="https://atcoder.jp" target="_blank" rel="noopener noreferrer">AtCoder</a></li>
             </ul>
           </div>
 
