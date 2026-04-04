@@ -246,7 +246,7 @@ export default function Join() {
                     <input type="radio" name="examChoice" value="A" required
                       checked={form.examChoice === 'A'}
                       onChange={e => setForm({...form, examChoice: e.target.value})} />
-                    {lang === 'ja' ? '問題 A（解析学）' : 'Problem A (Analysis)'}
+                    {lang === 'ja' ? '問題 A（最適停止問題）' : 'Problem A (Optimal Stopping)'}
                   </label>
                   <label className={`exam-choice ${form.examChoice === 'B' ? 'selected' : ''}`}>
                     <input type="radio" name="examChoice" value="B"
