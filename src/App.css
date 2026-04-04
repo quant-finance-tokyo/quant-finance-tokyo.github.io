@@ -884,6 +884,96 @@ main {
   border-color: var(--blue-600);
 }
 
+/* ===== Exam Section ===== */
+.exam-section {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+}
+
+.exam-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.exam-card {
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.exam-card:hover {
+  border-color: var(--blue-400);
+}
+
+.exam-card-header {
+  padding: 0.75rem 1.25rem;
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.exam-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--blue-600);
+  letter-spacing: 0.02em;
+}
+
+.exam-card-body {
+  padding: 1.5rem 1.25rem;
+}
+
+.exam-card-body p {
+  color: var(--gray-700);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.exam-math {
+  padding: 1rem 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.exam-note {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  margin-top: 1rem;
+}
+
+.exam-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  transition: all 0.2s;
+}
+
+.exam-choice:hover {
+  border-color: var(--blue-400);
+}
+
+.exam-choice.selected {
+  border-color: var(--blue-600);
+  background: rgba(37, 99, 235, 0.05);
+  color: var(--blue-600);
+}
+
+.exam-choice input[type="radio"] {
+  accent-color: var(--blue-600);
+}
+
 .form-success {
   text-align: center;
   padding: 2rem 0;

@@ -1,39 +1,72 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLang } from '../i18n/LanguageContext';
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
 
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby0npx1EH-f-VzBbCqXbDlgjQAxg7COud2W7KuLYnFMysmMCwjYuohF6Hy5N0gQ0I2l/exec';
 
+function Math({ tex, display = false }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (ref.current) {
+      katex.render(tex, ref.current, { displayMode: display, throwOnError: false });
+    }
+  }, [tex, display]);
+  return <span ref={ref} />;
+}
+
 export default function Join() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const j = t.join;
 
   const [form, setForm] = useState({
-    name: '', email: '', university: '', department: '',
-    year: '', interest: [], skills: '', contribution: '', motivation: '',
+    name: '', email: '', affiliation: '', year: '',
+    skills: '', contribution: '', examChoice: '', other: '',
   });
+  const [pdfFile, setPdfFile] = useState(null);
   const [status, setStatus] = useState('idle');
 
-  const handleInterest = (item) => {
-    setForm(prev => ({
-      ...prev,
-      interest: prev.interest.includes(item)
-        ? prev.interest.filter(i => i !== item)
-        : [...prev.interest, item]
-    }));
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type === 'application/pdf' && file.size <= 5 * 1024 * 1024) {
+      setPdfFile(file);
+    } else if (file) {
+      alert(lang === 'ja' ? 'PDFファイル（5MB以下）を選択してください。' : 'Please select a PDF file (max 5MB).');
+      e.target.value = '';
+    }
+  };
+
+  const fileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result.split(',')[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!pdfFile) {
+      alert(lang === 'ja' ? '数理試験の回答PDFを添付してください。' : 'Please attach your exam answer PDF.');
+      return;
+    }
     setStatus('sending');
     try {
+      const pdfBase64 = await fileToBase64(pdfFile);
       await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, interest: form.interest.join(', ') }),
+        body: JSON.stringify({
+          ...form,
+          pdfFileName: pdfFile.name,
+          pdfBase64: pdfBase64,
+        }),
       });
       setStatus('success');
-      setForm({ name: '', email: '', university: '', department: '', year: '', interest: [], skills: '', contribution: '', motivation: '' });
+      setForm({ name: '', email: '', affiliation: '', year: '', skills: '', contribution: '', examChoice: '', other: '' });
+      setPdfFile(null);
     } catch {
       setStatus('error');
     }
@@ -51,6 +84,7 @@ export default function Join() {
       </section>
 
       <section className="section">
+        {/* Steps */}
         <h2 className="fade-in" style={{ fontSize: '1.3rem', marginBottom: '2rem', fontFamily: 'var(--font-display)' }}>
           {j.flowTitle}
         </h2>
@@ -70,6 +104,64 @@ export default function Join() {
             <h3>{j.step3Title}</h3>
             <p>{j.step3Desc}</p>
           </div>
+        </div>
+
+        {/* Exam Problems */}
+        <div className="exam-section fade-in-up" id="exam">
+          <h2 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', fontFamily: 'var(--font-display)' }}>
+            {lang === 'ja' ? '数理試験問題' : 'Mathematics Screening Problems'}
+          </h2>
+          <p style={{ color: 'var(--gray-500)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+            {lang === 'ja'
+              ? '以下の2問からいずれか1問を選択し、解答をPDFで提出してください。LaTeXでの作成を推奨します。'
+              : 'Choose one of the following two problems and submit your solution as a PDF. We recommend using LaTeX.'}
+          </p>
+
+          <div className="exam-cards">
+            <div className="exam-card">
+              <div className="exam-card-header">
+                <span className="exam-label">{lang === 'ja' ? '問題 A — 解析学' : 'Problem A — Analysis'}</span>
+              </div>
+              <div className="exam-card-body">
+                <p style={{ marginBottom: '1rem' }}>
+                  {lang === 'ja' ? '次の等式が成り立つことを示せ。' : 'Prove the following identity.'}
+                </p>
+                <div className="exam-math">
+                  <Math
+                    tex={String.raw`\lim_{n \to \infty} \frac{1}{n^2} \int_1^{2^n} t^{-1+\frac{1}{n}} \cos t \, dt = 0`}
+                    display={true}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="exam-card">
+              <div className="exam-card-header">
+                <span className="exam-label">{lang === 'ja' ? '問題 B — 確率微分方程式' : 'Problem B — Stochastic Differential Equations'}</span>
+              </div>
+              <div className="exam-card-body">
+                <p style={{ marginBottom: '0.75rem' }}>
+                  {lang === 'ja'
+                    ? <>資産価格 <Math tex="X_t" /> が幾何ブラウン運動</>
+                    : <>Suppose the asset price <Math tex="X_t" /> follows a geometric Brownian motion</>}
+                </p>
+                <div className="exam-math">
+                  <Math tex={String.raw`dX_t = \mu X_t \, dt + \sigma X_t \, dW_t`} display={true} />
+                </div>
+                <p style={{ marginTop: '0.75rem' }}>
+                  {lang === 'ja'
+                    ? <>に従うとする。伊藤の補題を用いて <Math tex={String.raw`Y_t = X_t^2`} /> の確率微分方程式を求め、その導出過程を示せ。</>
+                    : <>Apply Itô's lemma to derive the stochastic differential equation for <Math tex={String.raw`Y_t = X_t^2`} />, showing the full derivation.</>}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p className="exam-note">
+            {lang === 'ja'
+              ? '※ 解答はLaTeXを用いて作成することが望ましいですが、手書きをスキャンしたPDFも受け付けます。'
+              : '* Solutions prepared in LaTeX are preferred, but scanned handwritten PDFs are also accepted.'}
+          </p>
         </div>
 
         {/* Form */}
@@ -93,7 +185,7 @@ export default function Join() {
             <form onSubmit={handleSubmit} className="join-form">
               <div className="form-group">
                 <label htmlFor="name">{j.name} <span className="required">*</span></label>
-                <input id="name" type="text" required placeholder="山田 太郎"
+                <input id="name" type="text" required placeholder={lang === 'ja' ? '山田 太郎' : 'Taro Yamada'}
                   value={form.name} onChange={e => setForm({...form, name: e.target.value})} />
               </div>
 
@@ -105,40 +197,21 @@ export default function Join() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="university">{j.university} <span className="required">*</span></label>
-                <input id="university" type="text" required placeholder="東京大学"
-                  value={form.university} onChange={e => setForm({...form, university: e.target.value})} />
-              </div>
-
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="department">{j.department} <span className="required">*</span></label>
-                  <input id="department" type="text" required placeholder="計数工学科"
-                    value={form.department} onChange={e => setForm({...form, department: e.target.value})} />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="year">{j.year} <span className="required">*</span></label>
-                  <select id="year" required value={form.year}
-                    onChange={e => setForm({...form, year: e.target.value})}>
-                    <option value="">{j.yearPlaceholder}</option>
-                    {Object.entries(j.years).map(([val, label]) => (
-                      <option key={val} value={val}>{label}</option>
-                    ))}
-                  </select>
-                </div>
+                <label htmlFor="affiliation">{j.affiliation} <span className="required">*</span></label>
+                <input id="affiliation" type="text" required
+                  placeholder={lang === 'ja' ? '東京大学 工学部 計数工学科' : 'UTokyo, Faculty of Engineering, Math Engineering'}
+                  value={form.affiliation} onChange={e => setForm({...form, affiliation: e.target.value})} />
               </div>
 
               <div className="form-group">
-                <label>{j.interest}</label>
-                <div className="interest-chips">
-                  {j.interests.map(item => (
-                    <button key={item} type="button"
-                      className={`interest-chip ${form.interest.includes(item) ? 'selected' : ''}`}
-                      onClick={() => handleInterest(item)}>
-                      {item}
-                    </button>
+                <label htmlFor="year">{j.year} <span className="required">*</span></label>
+                <select id="year" required value={form.year}
+                  onChange={e => setForm({...form, year: e.target.value})}>
+                  <option value="">{j.yearPlaceholder}</option>
+                  {Object.entries(j.years).map(([val, label]) => (
+                    <option key={val} value={val}>{label}</option>
                   ))}
-                </div>
+                </select>
               </div>
 
               <div className="form-group">
@@ -154,9 +227,40 @@ export default function Join() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="motivation">{j.motivation}</label>
-                <textarea id="motivation" rows="3" placeholder={j.motivationPlaceholder}
-                  value={form.motivation} onChange={e => setForm({...form, motivation: e.target.value})} />
+                <label>
+                  {lang === 'ja' ? '選択した問題' : 'Selected Problem'} <span className="required">*</span>
+                </label>
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <label className={`exam-choice ${form.examChoice === 'A' ? 'selected' : ''}`}>
+                    <input type="radio" name="examChoice" value="A" required
+                      checked={form.examChoice === 'A'}
+                      onChange={e => setForm({...form, examChoice: e.target.value})} />
+                    {lang === 'ja' ? '問題 A（解析学）' : 'Problem A (Analysis)'}
+                  </label>
+                  <label className={`exam-choice ${form.examChoice === 'B' ? 'selected' : ''}`}>
+                    <input type="radio" name="examChoice" value="B"
+                      checked={form.examChoice === 'B'}
+                      onChange={e => setForm({...form, examChoice: e.target.value})} />
+                    {lang === 'ja' ? '問題 B（確率微分方程式）' : 'Problem B (SDE)'}
+                  </label>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="pdf">
+                  {lang === 'ja' ? '解答PDF' : 'Answer PDF'} <span className="required">*</span>
+                </label>
+                <input id="pdf" type="file" accept=".pdf" required onChange={handleFileChange}
+                  style={{ padding: '0.75rem', background: 'var(--white)', border: '1px solid var(--gray-200)', borderRadius: '8px' }} />
+                <span style={{ fontSize: '0.8rem', color: 'var(--gray-400)', marginTop: '0.2rem' }}>
+                  {lang === 'ja' ? 'PDF形式・5MB以下' : 'PDF format, max 5MB'}
+                </span>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="other">{j.other}</label>
+                <textarea id="other" rows="2" placeholder={j.otherPlaceholder}
+                  value={form.other} onChange={e => setForm({...form, other: e.target.value})} />
               </div>
 
               <button type="submit" className="btn-primary" disabled={status === 'sending'}
