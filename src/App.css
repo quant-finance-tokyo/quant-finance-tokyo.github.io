@@ -744,6 +744,78 @@ main {
   color: var(--gray-600);
 }
 
+/* ===== Social Cards ===== */
+.social-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.social-card:hover {
+  border-color: var(--blue-400);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  fill: var(--blue-600);
+  margin-bottom: 1rem;
+}
+
+.social-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.social-card p {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid var(--blue-600);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  color: var(--blue-600);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.social-card:hover .social-btn {
+  background: var(--blue-600);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .social-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== Join Page ===== */
 .join-steps {
   display: grid;

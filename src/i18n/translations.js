@@ -59,6 +59,11 @@ const translations = {
       founderDesc1: '金融工学・統計学・量子情報に関心を持ち、数理的な視点から金融の世界を探求しています。プログラミングを活用したデータ分析や数理モデリングに取り組む傍ら、語学学習を趣味として続けており、現在は第5外国語を学習中です。',
       founderDesc2: 'このコミュニティを設立したのは、金融キャリアに関する情報が学科ごとに閉じていることへの課題感からです。自分自身が情報を集める中で感じた「もっと横のつながりがあれば」という思いを形にしました。将来的には、東大から世界の金融業界へ挑戦する学生が最良の情報と仲間を得られるコミュニティに育てていきたいと考えています。',
       founderTags: ['金融工学', '統計学', '量子情報', 'プログラミング', '多言語学習'],
+      socialTitle: 'SNS',
+      socialX: '最新の活動報告やイベント情報を発信しています。',
+      socialLinkedIn: 'プロフェッショナルな情報発信やイベント告知を行っています。',
+      socialInstagram: 'コミュニティの日常や活動の裏側を紹介しています。',
+      socialFollow: 'フォローする',
     },
 
     // Divisions
@@ -224,6 +229,11 @@ const translations = {
       founderDesc1: 'Interested in financial engineering, statistics, and quantum information, exploring the world of finance through a mathematical lens. Alongside data analysis and mathematical modeling with programming, he continues language learning as a hobby and is currently studying his 5th foreign language.',
       founderDesc2: 'He founded this community out of a sense that finance career information was closed within individual departments. He turned his feeling of "if only there were more cross-departmental connections" into reality. His vision is to build a community where UTokyo students challenging the global finance industry can access the best information and peers.',
       founderTags: ['Financial Engineering', 'Statistics', 'Quantum Information', 'Programming', 'Multilingual'],
+      socialTitle: 'Follow Us',
+      socialX: 'Stay updated with our latest activities and event announcements.',
+      socialLinkedIn: 'Professional updates, event announcements, and industry insights.',
+      socialInstagram: 'A behind-the-scenes look at our community and daily activities.',
+      socialFollow: 'Follow',
     },
 
     // Divisions
