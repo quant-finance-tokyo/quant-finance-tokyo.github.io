@@ -142,7 +142,7 @@ const translations = {
       faq: [
         { q: 'Q. 数理試験は難しいですか？', a: '大学の数学を学んでいれば解ける水準です。完璧な正答でなくとも、論理的な思考過程を重視します。' },
         { q: 'Q. 金融の知識がなくても入れますか？', a: 'はい。数理的素養があり、金融キャリアに興味がある方であれば歓迎します。' },
-        { q: 'Q. 東大生以外でも参加できますか？', a: '東大生を中心に運営していますが、他大学の方も歓迎しています。同じ審査プロセスを経ていただきます。' },
+        { q: 'Q. 東大生以外でも参加できますか？', a: '東大生のみ入会いただけます。他大学の方は入会フォームの審査にて数学の問題を「両方」解いていただき、その他の欄に志望動機をお書きください。厳正に審査した後、入会を許可いたします。' },
         { q: 'Q. LaTeXが使えなくても大丈夫ですか？', a: 'LaTeX推奨ですが、手書きをスキャンしたPDFでも受け付けます。' },
         { q: 'Q. 会費はかかりますか？', a: '無料です。会費は一切かかりません。' },
       ],
@@ -312,7 +312,7 @@ const translations = {
       faq: [
         { q: 'Q. How difficult is the math exam?', a: 'It is solvable with university-level mathematics. We value logical reasoning over perfect answers.' },
         { q: 'Q. Can I join without finance knowledge?', a: 'Yes. We welcome anyone with mathematical aptitude and interest in finance careers.' },
-        { q: 'Q. Can non-UTokyo students join?', a: 'We primarily serve UTokyo students, but students from other universities are also welcome. The same review process applies.' },
+        { q: 'Q. Can non-UTokyo students join?', a: 'Membership is open to UTokyo students only. Students from other universities must solve both math problems and provide a statement of motivation in the "Other" field. Admission will be granted after a rigorous review.' },
         { q: 'Q. Do I need to know LaTeX?', a: 'LaTeX is recommended but not required. Scanned handwritten PDFs are also accepted.' },
         { q: 'Q. Are there any fees?', a: 'No. Membership is completely free.' },
       ],
