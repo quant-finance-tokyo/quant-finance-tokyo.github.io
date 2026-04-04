@@ -3,7 +3,7 @@ import { useLang } from '../i18n/LanguageContext';
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
 
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby0npx1EH-f-VzBbCqXbDlgjQAxg7COud2W7KuLYnFMysmMCwjYuohF6Hy5N0gQ0I2l/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwra5s52emC-5xC8HF7hbtuQ5P_OhRGK97dcReLl85hxQelGCPtewo6pCidiUqMg_nH/exec';
 
 function Math({ tex, display = false }) {
   const ref = useRef(null);
