@@ -891,11 +891,20 @@ main {
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: 12px;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .exam-section {
+    padding: 1.25rem;
+  }
 }
 
 .exam-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
