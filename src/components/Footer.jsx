@@ -15,6 +15,12 @@ export default function Footer() {
         <a href="https://x.com/VertexUTokyo" target="_blank" rel="noopener noreferrer">
           𝕏 Twitter
         </a>
+        <a href="https://www.linkedin.com/company/quant-finance-at-utokyo" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a href="https://www.instagram.com/quant.finance.utokyo" target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
       </div>
       <p className="footer-copy">{t.footer.copyright}</p>
     </footer>
