@@ -120,18 +120,29 @@ export default function Join() {
           <div className="exam-cards">
             <div className="exam-card">
               <div className="exam-card-header">
-                <span className="exam-label">{lang === 'ja' ? '問題 A — 解析学' : 'Problem A — Analysis'}</span>
+                <span className="exam-label">{lang === 'ja' ? '問題 A — 最適停止問題' : 'Problem A — Optimal Stopping'}</span>
               </div>
               <div className="exam-card-body">
-                <p style={{ marginBottom: '1rem' }}>
-                  {lang === 'ja' ? '次の等式が成り立つことを示せ。' : 'Prove the following identity.'}
+                <p style={{ marginBottom: '0.75rem' }}>
+                  {lang === 'ja'
+                    ? <>公平な10面体サイコロ（出目は <Math tex="0, 1, \dots, 9" />）を何度でも振れる。出た目は得点に加算されるが、<strong>0 が出たらその時点で得点はすべて失われ、最終得点は 0</strong> になる。</>
+                    : <>You may roll a fair 10-sided die (faces <Math tex="0, 1, \dots, 9" />) as many times as you like. Each roll is added to your score, but <strong>if you roll 0, you lose all points and your final score is 0</strong>.</>}
                 </p>
-                <div className="exam-math">
-                  <Math
-                    tex={String.raw`\lim_{n \to \infty} \frac{1}{n^2} \int_1^{2^n} t^{-1+\frac{1}{n}} \cos t \, dt = 0`}
-                    display={true}
-                  />
-                </div>
+                <p style={{ marginBottom: '0.75rem' }}>
+                  {lang === 'ja'
+                    ? '各回の後で、もう1回振るか、やめて現在の得点を受け取るかを選べる。'
+                    : 'After each roll, you may choose to roll again or stop and keep your current score.'}
+                </p>
+                <p style={{ marginBottom: '0.5rem' }}>
+                  {lang === 'ja'
+                    ? <><strong>(1)</strong> 期待得点を最大にするには、どのような方針で止まるのが最適か。また、そのときの期待得点をおおよそ求めよ。</>
+                    : <><strong>(1)</strong> What stopping strategy maximizes the expected score? Find the approximate expected score under that strategy.</>}
+                </p>
+                <p>
+                  {lang === 'ja'
+                    ? <><strong>(2)</strong> ただし、最初の1回だけは 0 を引いてもゲーム終了にならず、得点が 0 に戻るだけで続行できるとする。このとき、戦略はどう変わるか。</>
+                    : <><strong>(2)</strong> Suppose that on the first roll only, rolling 0 does not end the game — your score simply resets to 0 and you continue. How does the optimal strategy change?</>}
+                </p>
               </div>
             </div>
 
