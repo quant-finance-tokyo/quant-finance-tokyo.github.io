@@ -148,21 +148,31 @@ export default function Join() {
 
             <div className="exam-card">
               <div className="exam-card-header">
-                <span className="exam-label">{lang === 'ja' ? '問題 B — 確率微分方程式' : 'Problem B — Stochastic Differential Equations'}</span>
+                <span className="exam-label">{lang === 'ja' ? '問題 B — 確率解析・数理ファイナンス' : 'Problem B — Stochastic Calculus & Mathematical Finance'}</span>
               </div>
               <div className="exam-card-body">
                 <p style={{ marginBottom: '0.75rem' }}>
                   {lang === 'ja'
-                    ? <>資産価格 <Math tex="X_t" /> が幾何ブラウン運動</>
-                    : <>Suppose the asset price <Math tex="X_t" /> follows a geometric Brownian motion</>}
+                    ? <>資産価格 <Math tex="S_t" /> が以下の確率微分方程式に従うとする。</>
+                    : <>Suppose the asset price <Math tex="S_t" /> follows the stochastic differential equation:</>}
                 </p>
                 <div className="exam-math">
-                  <Math tex={String.raw`dX_t = \mu X_t \, dt + \sigma X_t \, dW_t`} display={true} />
+                  <Math tex={String.raw`dS_t = \mu S_t \, dt + \sigma S_t \, dW_t`} display={true} />
                 </div>
-                <p style={{ marginTop: '0.75rem' }}>
+                <p style={{ marginTop: '0.75rem', marginBottom: '0.75rem' }}>
                   {lang === 'ja'
-                    ? <>に従うとする。伊藤の補題を用いて <Math tex={String.raw`Y_t = X_t^2`} /> の確率微分方程式を求め、その導出過程を示せ。</>
-                    : <>Apply Itô's lemma to derive the stochastic differential equation for <Math tex={String.raw`Y_t = X_t^2`} />, showing the full derivation.</>}
+                    ? <>ここで <Math tex="\mu, \sigma" /> は定数、<Math tex="W_t" /> は標準ブラウン運動である。無リスク金利を <Math tex="r" />（定数）とし、時刻 <Math tex="T" /> に満期を迎えるヨーロピアン・デリバティブの時刻 <Math tex="t" /> における価格を <Math tex="V(t, S_t)" /> とする。<Math tex="V" /> は十分滑らかであると仮定してよい。</>
+                    : <>where <Math tex="\mu, \sigma" /> are constants and <Math tex="W_t" /> is a standard Brownian motion. Let <Math tex="r" /> be the constant risk-free rate, and let <Math tex="V(t, S_t)" /> denote the price at time <Math tex="t" /> of a European derivative maturing at time <Math tex="T" />. Assume <Math tex="V" /> is sufficiently smooth.</>}
+                </p>
+                <p style={{ marginBottom: '0.5rem' }}>
+                  {lang === 'ja'
+                    ? <><strong>(1)</strong> 伊藤の補題を用いて <Math tex="dV(t, S_t)" /> を求めよ。</>
+                    : <><strong>(1)</strong> Apply Itô's lemma to derive <Math tex="dV(t, S_t)" />.</>}
+                </p>
+                <p>
+                  {lang === 'ja'
+                    ? <><strong>(2)</strong> デルタヘッジの議論（自己充足的ポートフォリオの無裁定条件）を用いて、<Math tex="V" /> が満たす偏微分方程式（Black-Scholes PDE）を導出せよ。導出過程を明確に示すこと。</>
+                    : <><strong>(2)</strong> Using a delta-hedging argument (no-arbitrage condition on a self-financing portfolio), derive the partial differential equation (Black-Scholes PDE) that <Math tex="V" /> satisfies. Show the full derivation.</>}
                 </p>
               </div>
             </div>
@@ -252,7 +262,7 @@ export default function Join() {
                     <input type="radio" name="examChoice" value="B"
                       checked={form.examChoice === 'B'}
                       onChange={e => setForm({...form, examChoice: e.target.value})} />
-                    {lang === 'ja' ? '問題 B（確率微分方程式）' : 'Problem B (SDE)'}
+                    {lang === 'ja' ? '問題 B（確率解析・数理ファイナンス）' : 'Problem B (Stochastic Calculus)'}
                   </label>
                 </div>
               </div>
