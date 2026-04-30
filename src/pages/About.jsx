@@ -79,6 +79,18 @@ export default function About() {
             <span className="social-btn">{a.socialFollow}</span>
           </a>
         </div>
+
+        <h2 className="fade-in" style={{ fontSize: '1.4rem', margin: '3rem 0 1.5rem', fontFamily: 'var(--font-display)', color: 'var(--gray-900)' }}>
+          {a.contactTitle}
+        </h2>
+        <div className="contact-box fade-in">
+          <div className="contact-row">
+            <span className="contact-label">{a.contactEmailLabel}</span>
+            <span className="contact-value">vertex.utokyo [at] gmail.com</span>
+          </div>
+          <p className="contact-note">{a.contactEmailNote}</p>
+          <p className="contact-note">{a.contactSnsNote}</p>
+        </div>
       </div>
     </>
   );

@@ -64,6 +64,10 @@ const translations = {
       socialLinkedIn: 'プロフェッショナルな情報発信やイベント告知を行っています。',
       socialInstagram: 'コミュニティの日常や活動の裏側を紹介しています。',
       socialFollow: 'フォローする',
+      contactTitle: 'お問い合わせ',
+      contactEmailLabel: '公式メール',
+      contactEmailNote: '※ 取材・協賛・他団体からのご連絡など、正式なお問い合わせはメールにてお願いいたします。スパム対策のため [at] と表記しています。送信時は @ に置き換えてください。',
+      contactSnsNote: '※ カジュアルなご質問・ご連絡は、上記SNSのDMでもお気軽にどうぞ。',
     },
 
     // Divisions
@@ -234,6 +238,10 @@ const translations = {
       socialLinkedIn: 'Professional updates, event announcements, and industry insights.',
       socialInstagram: 'A behind-the-scenes look at our community and daily activities.',
       socialFollow: 'Follow',
+      contactTitle: 'Contact',
+      contactEmailLabel: 'Official Email',
+      contactEmailNote: '* For formal inquiries (media, sponsorship, partnerships, etc.), please contact us by email. The address is shown with [at] as an anti-spam measure — replace it with @ when sending.',
+      contactSnsNote: '* For casual questions or messages, feel free to DM us via the social media accounts above.',
     },
 
     // Divisions
